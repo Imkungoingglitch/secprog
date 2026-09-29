@@ -224,7 +224,12 @@ Target keamanan aplikasi ini (centang saat sudah diimplementasi):
 
 ## 👥 Kerja Tim
 
-Panduan alur kerja Git untuk anggota tim ada di **[CONTRIBUTING.md](CONTRIBUTING.md)**.
+Panduan Git untuk anggota tim ada di **[CONTRIBUTING.md](CONTRIBUTING.md)**, berisi:
+- Alur kerja dengan branch (`branch` → `add` → `commit` → `push` → Pull Request → merge)
+- Cheat sheet perintah Git (status, branch, stash, pull, dll)
+- Cara membatalkan perubahan / commit
+- Aturan penamaan branch & format pesan commit
+- Cara mengatasi conflict
 
 ### Anggota Tim
 | Nama | NIM | Bagian |
