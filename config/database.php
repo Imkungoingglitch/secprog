@@ -4,5 +4,7 @@
  *
  * TODO:
  *  - Koneksi database menggunakan PDO
- *  - Jangan commit kredensial asli ke GitHub
+ *  - Ambil kredensial dari environment variable (getenv('DB_HOST'), DB_PORT,
+ *    DB_NAME, DB_USER, DB_PASS) yang diisi oleh docker-compose dari file .env
+ *  - Jangan hardcode / commit kredensial asli ke GitHub
  */

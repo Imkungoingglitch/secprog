@@ -1,0 +1,11 @@
+-- IT Helpdesk - skema database
+--
+-- File ini dijalankan otomatis oleh container MariaDB saat pertama kali
+-- dibuat (volume database masih kosong).
+--
+-- TODO:
+--  - Tabel users (id, name, email, password_hash, role, photo, created_at)
+--  - Tabel password_resets (user_id, token_hash, expires_at)
+--  - Tabel categories (id, name)
+--  - Tabel tickets (id, user_id, category_id, title, description, priority, status, created_at, updated_at)
+--  - Seed akun admin awal

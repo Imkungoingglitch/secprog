@@ -1,3 +1,6 @@
+# Environment (berisi password)
+.env
+
 # Uploaded files (keep folder only)
 uploads/profiles/*
 !uploads/profiles/.gitkeep
