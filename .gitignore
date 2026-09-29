@@ -1,0 +1,9 @@
+# Uploaded files (keep folder only)
+uploads/profiles/*
+!uploads/profiles/.gitkeep
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
