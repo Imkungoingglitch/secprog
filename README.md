@@ -10,7 +10,6 @@ Dibangun dengan **PHP Native + Apache + MariaDB**, dijalankan menggunakan **Dock
 - [Tech Stack](#-tech-stack)
 - [Struktur Folder](#-struktur-folder)
 - [Menjalankan Aplikasi (Docker)](#-menjalankan-aplikasi-docker)
-- [Menjalankan di WSL](#-menjalankan-di-wsl-windows)
 - [Perintah Docker yang Sering Dipakai](#-perintah-docker-yang-sering-dipakai)
 - [Environment Variables](#%EF%B8%8F-environment-variables)
 - [Checklist Keamanan](#-checklist-keamanan)
@@ -98,7 +97,7 @@ helpdesk/
 ## 🚀 Menjalankan Aplikasi (Docker)
 
 ### Prasyarat
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) **atau** Docker di WSL (lihat bagian [WSL](#-menjalankan-di-wsl-windows))
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - Git
 
 ### Langkah
@@ -130,30 +129,6 @@ docker compose up -d --build
 Login phpMyAdmin memakai `DB_USER` / `DB_PASS` dari file `.env`.
 
 > 💡 Folder project di-*mount* ke dalam container, jadi setiap perubahan file PHP **langsung terlihat** tanpa perlu build ulang — cukup refresh browser.
-
----
-
-## 🐧 Menjalankan di WSL (Windows)
-
-Kalau tidak memakai Docker Desktop, Docker bisa dijalankan di WSL Ubuntu.
-
-**Setup sekali saja** (di terminal WSL):
-```bash
-# Install Docker + plugin compose
-sudo apt update
-sudo apt install -y docker.io docker-compose-v2
-
-# Supaya docker bisa dipakai tanpa sudo
-sudo usermod -aG docker $USER
-```
-Tutup terminal WSL, jalankan `wsl --shutdown` dari PowerShell, lalu buka WSL lagi.
-
-**Menjalankan project** — folder Windows bisa diakses dari WSL lewat `/mnt/<drive>/`. Contoh:
-```bash
-cd /mnt/e/me/secprog/aol/helpdesk
-docker compose up -d --build
-```
-Aplikasi tetap dibuka dari browser Windows di http://localhost:8080.
 
 ---
 
@@ -244,8 +219,6 @@ Target keamanan aplikasi ini (centang saat sudah diimplementasi):
 | `port is already allocated` | Port 8080/8081 sudah dipakai. Ganti `APP_PORT` / `PMA_PORT` di `.env` |
 | Halaman blank / error 500 | Lihat error di `docker compose logs -f web` (error tidak ditampilkan di browser) |
 | Perubahan `schema.sql` tidak masuk | Reset database (lihat [Reset database](#reset-database)) |
-| `permission denied ... docker.sock` (WSL) | Jalankan `sudo usermod -aG docker $USER` lalu `wsl --shutdown` |
-| `unknown command: docker compose` (WSL) | Install plugin: `sudo apt install -y docker-compose-v2` |
 
 ---
 
